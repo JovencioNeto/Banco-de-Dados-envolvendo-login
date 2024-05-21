@@ -1,76 +1,79 @@
-:root{
-    --white: #fff;
-    --black: #000;
-    --bg-color-1: #370250;
-    --bg-color-2: #771CA3;
-    --bg-color-3: #860068;
-
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
 }
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
+.background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(150deg, #370250 16.73%, #771CA3 50.04%, #860068 83.35%);
+  width: 100vw;
+  height: 100vh;
 }
 
-
-.background{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(150deg, var(--bg-color-1) 16.73%, var(--bg-color-2) 50.04%, var(--bg-color-3) 83.35%);
-    width: 100vw;
-    height: 100vh;
+.box_form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  background-color: #fff;
+  width: 60vw;
+  height: 76vh;
+  border-radius: 4vb;
 }
 
-.box_form{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    background-color: var(--white);
-    width: 60vw;
-    height: 76vh;
-    border-radius: 4vb;
+.login_form {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+.login_form input {
+  margin: 0 0 2vb;
+  height: 3rem;
+  width: 15rem;
+  max-width: max-content;
+  border: 0.3vb solid;
+  border-radius: 1vb;
 }
 
-.login_form{
-    display: flex;
-    justify-content: space-between;
-    align-items: left;
-    flex-wrap: nowrap;
-    flex-direction: column;
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
 }
 
-.login_form input{
-    margin: 0 0 2vb;
-    width: 30vw;
-    height: 4.5vh;
-    max-width: max-content;
-    border: 0.3vb solid;
-    border-radius: 1vb;
+.icon_logo {
+  position: relative;
+  bottom: 40px;
+  width: 20rem;
+  height: 16rem;
+  border-radius: 30px;
 }
 
-.login_form label{
-    width: 50vw;
-    height: 4vh;
-    max-width: max-content;
+.button_entrar {
+  border-radius: 1vb;
+  width: 30rem;
+  height: 3rem;
+  max-width: max-content;
 }
 
-.icon_logo{
-    position: relative;
-    bottom: 40px;
-    width: 20rem;
-    height: 16rem;
-    border-radius: 30px;
+.button_area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.button_entrar{
-    border-radius: 1.5vb;
-    width: 30vw;
-    height: 5vh;
-    max-width: max-content;
-    padding: 1.5rem 2.5rem 0 2.5rem;
+.cadastro_form {
+  display: none;
 }
+
+/*# sourceMappingURL=style.css.map */

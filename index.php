@@ -4,64 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/style/style.css">
-    <script src="./src/js/script.js" defer></script>
-    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="./src/img/DRM.png">
+    <title>DRM profile</title>
 </head>
 <body>
+    <!--Fundo do website com class = "background"-->
     <div class="background">
+        <!--Fundo da caixa dos formulários com class = "box_form-->
         <div class ="box_form" >
+            <!--Formulário de Login-->
             <form method="post" id="form" class="login_form">
 
                 <img src="./src/img/DRM.png" alt="DRM Logo" class="icon_logo">
 
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" class="email" placeholder="Digite seu Email">
+                <label for="email_login">Email:</label>
+                <input type="email" name="email_login" id="email_login" class="email" placeholder="Digite seu Email">
                 
 
-                <label for="password">Senha:</label>
-                <input type="password" name="password" id="password" class="password" placeholder="***************"> 
+                <label for="password_login">Senha:</label>
+                <input type="password" name="password_login" id="password_login" class="password" placeholder="***************"> 
 
                 <div class ='button_area'>
                     <button type="submit" class="button_entrar" id="button_entrar" value ="entrar" name="entrar">Entrar</button>
                 </div>
-                <p>Já possui uma conta? <a href="#">Entrar</a></p>
+
+                <div class = "link">
+                    <p class = "link_entrar">Já possui uma conta? <a  href="#">Entrar</a></p>
+                </div>
+                
             </form>
+            <!--Fim do formulário de Login-->
+
+            <!--Formulário de Cadastro-->
+            <form action="post" class = "cadastro_form">
+                <img src="./src/img/DRM.png" alt="DRM Logo" class="icon_logo">
+
+                <label for="nome_cad">Nome:</label>
+                <input type="text" name="nome_cad" id="nome_cad" class="nome" placeholder="Digite seu Nome">
+
+                <label for="email_cad">Email:</label>
+                <input type="email" name="email_cad" id="email_cad" class="email" placeholder="Digite seu Email">
+
+                <label for="password_cad">Senha:</label>
+                <input type="password" name="password_cad" id="password_cad" class="password_cad" placeholder="***************">
+
+                <label for="confirmation_password">Confirmação de Senha:</label>
+                <input type="password" name="confirmation_password" id="confirmation_password" class="confirmation_password" placeholder="***************"> 
+
+                <div class ='button_area'>
+                    <button type="submit" class="button_cadastrar" id="button_cadastrar" value ="cadastrar" name="cadastrar">Cadastrar</button>
+                </div>
+
+                <div class ="link">
+                    <p class = "link_entrar">Não possui uma conta?<a href="#">Cadastrar-se</a></p>
+                </div>
+            </form>
+            <!--Fim do formulário de Cadastro-->
         </div>
+        <!--Fim do bloco dos formulários-->
     </div>
+    <!--Fim do fundo-->
 
     <?php
-        $servername = 'localhost';
-        $username = 'root';
-        $password = '';
-        $dbname = 'biblioteca';
+        include("./src/php/conexao.php");
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        if (!$conn) {
-            die('Falha ao conectar ao banco de dados'.mysqli_error($conn));
-        }
-
+        //Verifica se o botão de login foi ativado
         if(isset($_POST['entrar'])){
-            $email = $_POST["email"];
-            $password = $_POST["password"];
-
-            $sql ="SELECT email, senha FROM usuarios WHERE email = '$email';";
-            $result = mysqli_query($conn, $sql);
-            $login = mysqli_fetch_array($result);
-
-            if(is_null($login)){
-                echo"<script type = 'text/javascript'> alert('Conta inexistente'); </script>";
-            }else{
-                $login_m = $login['email'];
-                $login_p = $login['senha'];
-
-                if(($login_m == $email) && ($login_p == $password)) {
-                    echo "<script type = 'text/javascript'> alert('Login realizado.');</script>";
-                } else{
-                    echo "<script type = 'text/javascript'> alert('Email ou senha invalido.');</script>";
-                }  
-            }
+            include("./src/php/login.php");
+        }else if(isset($_POST["cadastrar"])){
+            include("./src/php/cadastro.php");
         }
+
+        //Verifica se o botão de cadastro foi ativado
     ?>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="./src/js/script.js" defer></script>
+    
+</script>
 </body>
 </html>
