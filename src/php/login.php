@@ -15,6 +15,8 @@
 
         if(($login_m == $email) && ($login_p == $password)) {
             echo "<script type = 'text/javascript'> alert('Login realizado.');</script>";
+            $_SESSION["user"] = $login_m;
+            echo'<script type="text/javascript" window.open("./home.php","_self"); </script>';
         } else{
             echo "<script type = 'text/javascript'> alert('Email ou senha invalido.');</script>";
         }  

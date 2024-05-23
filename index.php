@@ -1,3 +1,8 @@
+<?php 
+    //Importar o arquivo conexao.php
+    include("./src/php/conexao.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/style/style.css">
     <link rel="icon" type="image/x-icon" href="./src/img/DRM.png">
-    <title>DRM profile</title>
+    <title>DRM profile - Login</title>
 </head>
 <body>
     <!--Fundo do website com class = "background"-->
@@ -13,7 +18,7 @@
         <!--Fundo da caixa dos formulários com class = "box_form-->
         <div class ="box_form" >
             <!--Formulário de Login-->
-            <form method="post" id="form" class="login_form">
+            <form method="post" id="form_login" class="login_form">
 
                 <img src="./src/img/DRM.png" alt="DRM Logo" class="icon_logo">
 
@@ -36,7 +41,7 @@
             <!--Fim do formulário de Login-->
 
             <!--Formulário de Cadastro-->
-            <form action="post" class = "cadastro_form">
+            <form action="post" class = "cadastro_form" id="form_cad">
                 <img src="./src/img/DRM.png" alt="DRM Logo" class="icon_logo">
 
                 <label for="nome_cad">Nome:</label>
@@ -66,7 +71,6 @@
     <!--Fim do fundo-->
 
     <?php
-        include("./src/php/conexao.php");
 
         //Verifica se o botão de login foi ativado
         if(isset($_POST['entrar'])){

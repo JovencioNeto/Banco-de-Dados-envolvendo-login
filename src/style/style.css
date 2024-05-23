@@ -34,18 +34,18 @@
   flex-direction: column;
 }
 .login_form input {
-  margin: 0 0 2vb;
   height: 3rem;
-  width: 15rem;
-  max-width: max-content;
-  border: 0.3vb solid;
-  border-radius: 1vb;
+  width: 20rem;
+  border-radius: 1.5vb;
+}
+.login_form input:hover {
+  filter: brightness(0.8);
 }
 
 .link {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
   margin-top: 2rem;
 }
@@ -59,10 +59,20 @@
 }
 
 .button_entrar {
-  border-radius: 1vb;
-  width: 30rem;
+  border: 2px solid #771CA3;
+  border-radius: 1.5vb;
+  background-color: #fff;
+  color: #771CA3;
+  margin-top: 2rem;
+  width: 20rem;
   height: 3rem;
-  max-width: max-content;
+  transition: 0.25s;
+}
+.button_entrar:hover {
+  border: 5px solid #fff;
+  transform: scale(1.1);
+  background-color: #771CA3;
+  color: #fff;
 }
 
 .button_area {

@@ -1,16 +1,5 @@
-
-$white: #fff;
-$black: #000;
-$bg-color-1: #370250;
-$bg-color-2: #771CA3;
-$bg-color-3: #860068;
-
-$center: center ;
-$flex: flex ;
-$relative: relative ;
-$nowrap: nowrap ; 
-$column: column ;
-$max-content: max-content ;
+@import "./sass/imports.scss";
+@import "./sass/include.scss";
 
 *{
     padding: 0;
@@ -21,18 +10,14 @@ $max-content: max-content ;
 
 
 .background{
-    display: $flex;
-    align-items: $center;
-    justify-content: $center;
+    @include center($flex,$center,$center);
     background: linear-gradient(150deg, $bg-color-1 16.73%, $bg-color-2 50.04%, $bg-color-3 83.35%);
     width: 100vw;
     height: 100vh;
 }
 
 .box_form{
-    display: $flex;
-    align-items: $center;
-    justify-content: $center;
+    @include center($flex,$center,$center);
     flex-wrap: $nowrap;
     flex-direction: $column;
     background-color: $white;
@@ -49,20 +34,18 @@ $max-content: max-content ;
     flex-direction: $column;
 
     input{
-        margin: 0 0 2vb;
         height: 3rem;
-        width: 15rem;
-        max-width: $max-content;
-        border: 0.3vb solid;
-        border-radius: 1vb;
+        width: 20rem;
+        border-radius: 1.5vb;
+    }
+    input:hover{
+        filter: brightness(0.8)
     }
 }
 
 .link{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    @include center($flex,$center,$center);
+    text-align: $center;
     margin-top: 2rem;
 }
 .icon_logo{
@@ -74,19 +57,29 @@ $max-content: max-content ;
 }
 
 .button_entrar{
-    border-radius: 1vb;
-    width: 30rem;
+    border: 2px solid $bg-color-2;
+    border-radius: 1.5vb;
+    background-color: $white;
+    color: $bg-color-2;
+    margin-top: 2rem;
+    width: 20rem;
     height: 3rem;
-    max-width: $max-content;
+    transition: .25s;
+
+    &:hover{
+        border: 5px solid $white;
+        transform: scale(1.1);
+        background-color: $bg-color-2;
+        color: $white;
+    }
+    
 }
 
 .button_area{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    @include center($flex,$center,$center);
+    text-align: $center;
 }
 
 .cadastro_form{
-    display: none;
+    display: $none;
 }
